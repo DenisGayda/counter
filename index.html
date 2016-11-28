@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson</title>
+</head>
+<script>
+function counter() {
+	var current = 0;
+
+	return function() {
+		return current++;
+	};
+
+
+};
+
+var newCounter = counter();
+
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+
+function sum(a) {
+	var current = a || 0;
+
+	if (a === undefined) {
+		return current;
+	}
+
+	return function sum(b) {
+		if (b !== undefined) {
+			current += b;
+			return sum
+		} else {
+			return current
+		}
+	};
+
+};
+
+
+console.log(sum(5)(1)(5)());
+
+
+
+</script>
+<body>
+
+</body>
+</html>
